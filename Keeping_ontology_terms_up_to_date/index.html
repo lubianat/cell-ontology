@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Keeping ontology terms up to date - CL Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Keeping ontology terms up to date";
+    var mkdocs_page_input_path = "Keeping_ontology_terms_up_to_date.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CL Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Keeping ontology terms up to date</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../annotation_properties/">Annotation Properties</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../presentations/">Presentations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../relations_guide/">A guide to what relations to use where in the Cell Ontology</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resolving_merge_conflicts/">Resolving merge conflicts</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CL Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Keeping ontology terms up to date</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="keeping-cell-ontology-annotation-up-to-date">Keeping cell ontology annotation up to date<a class="headerlink" href="#keeping-cell-ontology-annotation-up-to-date" title="Permanent link">&para;</a></h2>
+<p>Cell ontology identifiers (IRIs) are never lost, but they are occasionally deprecated. On the rare occasions that this happens, all logical links to other ontology terms (e.g. recording classification or partonomy) are removed and term is tagged with the annotation <code>owl:deprecated True</code>.  To aid migration of annotations to the latest standard,  these terms are also annotated with either a <code>term_replaced_by</code> or a <code>consider</code> tag.  A <code>term_replaced_by</code> annotation is used to record the ID of a term it is safe to auto-migrate annotations to.  More rarely,  <code>consider</code> is used to record multiple potential replacement terms requiring human consideration to map.  In these cases, a comment will be present to provide guidance for mapping.</p>
+<p>The <a href="https://www.ebi.ac.uk/ols/docs/api#Term">Ontology Lookup Service API</a> provides a convenient way to check for deprecated terms &amp; find replacements.</p>
+<p>The term http://purl.obolibrary.org/obo/CL_0000375 has been deprecated and has that tag <strong>term_replaced_by</strong></p>
+<p>Querying the OLS API for this:</p>
+<p>https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000375. (Note the query IRI must be double encoded)</p>
+<p>Returns:</p>
+<pre><code class="language-json">{
+  &quot;iri&quot; : &quot;http://purl.obolibrary.org/obo/CL_0000375&quot;,
+  &quot;label&quot; : &quot;obsolete osteoprogenitor cell&quot;,
+  &quot;description&quot; : null,
+  &quot;annotation&quot; : {
+    &quot;database_cross_reference&quot; : [ &quot;BTO:0002051&quot; ],
+    &quot;has_obo_namespace&quot; : [ &quot;cell&quot; ],
+    &quot;term replaced by&quot; : [ &quot;CL:0007010&quot; ]
+  },
+  &quot;synonyms&quot; : null,
+  &quot;ontology_name&quot; : &quot;cl&quot;,
+  &quot;ontology_prefix&quot; : &quot;CL&quot;,
+  &quot;ontology_iri&quot; : &quot;http://purl.obolibrary.org/obo/cl.owl&quot;,
+  &quot;is_obsolete&quot; : true,
+  &quot;term_replaced_by&quot; : &quot;CL:0007010&quot;,
+  &quot;is_defining_ontology&quot; : true,
+  &quot;has_children&quot; : false,
+  &quot;is_root&quot; : true,
+  &quot;short_form&quot; : &quot;CL_0000375&quot;,
+  &quot;obo_id&quot; : &quot;CL:0000375&quot;,
+  &quot;in_subset&quot; : null,
+  &quot;obo_definition_citation&quot; : null,
+  &quot;obo_xref&quot; : [{&quot;database&quot;:&quot;BTO&quot;,&quot;id&quot;:&quot;0002051&quot;,&quot;description&quot;:null,&quot;url&quot;:&quot;http://purl.obolibrary.org/obo/BTO_0002051&quot;}],
+  &quot;obo_synonym&quot; : null,
+  &quot;is_preferred_root&quot; : false,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000375&quot;
+    },
+    &quot;graph&quot; : {
+      &quot;href&quot; : &quot;https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000375/graph&quot;
+    }
+  }
+}
+</code></pre>
+<p>The term_replaced_by key points to the ID of a safe replacement term: CL:0007010.  This is a CURIE for http://purl.obolibrary.org/obo/CL_0007010 *</p>
+<p><strong>consider</strong></p>
+<p>The term http://purl.obolibrary.org/obo/CL_0000144 has been deprecated and has a <strong>consider</strong> tag pointing to multiple possible replacement terms, along with a comment for guidance.</p>
+<p>Querying the OLS API for this: https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144</p>
+<p>Returns</p>
+<pre><code class="language-json">{
+  &quot;iri&quot; : &quot;http://purl.obolibrary.org/obo/CL_0000144&quot;,
+  &quot;label&quot; : &quot;obsolete cell by function&quot;,
+  &quot;description&quot; : [ &quot;OBSOLETE: A classification of cells by their primary end goal or behavior.&quot; ],
+  &quot;annotation&quot; : {
+    &quot;comment&quot; : [ &quot;This term was made obsolete because there is no difference in meaning between it and 'cell', as any cell can be classified by its function or behavior. If you have used this term in annotation, please replace it with cell (CL:0000000), native cell (CL:0000003), or cell in vitro (CL:0001034) as appropriate.&quot; ],
+    &quot;consider&quot; : [ &quot;CL:0001034&quot;, &quot;CL:0000000&quot;, &quot;CL:0000003&quot; ],
+    &quot;has_obo_namespace&quot; : [ &quot;cell&quot; ]
+  },
+  &quot;synonyms&quot; : null,
+  &quot;ontology_name&quot; : &quot;cl&quot;,
+  &quot;ontology_prefix&quot; : &quot;CL&quot;,
+  &quot;ontology_iri&quot; : &quot;http://purl.obolibrary.org/obo/cl.owl&quot;,
+  &quot;is_obsolete&quot; : true,
+  &quot;term_replaced_by&quot; : null,
+  &quot;is_defining_ontology&quot; : true,
+  &quot;has_children&quot; : false,
+  &quot;is_root&quot; : true,
+  &quot;short_form&quot; : &quot;CL_0000144&quot;,
+  &quot;obo_id&quot; : &quot;CL:0000144&quot;,
+  &quot;in_subset&quot; : null,
+  &quot;obo_definition_citation&quot; : [{&quot;definition&quot;:&quot;OBSOLETE: A classification of cells by their primary end goal or behavior.&quot;,&quot;oboXrefs&quot;:[{&quot;database&quot;:&quot;FB&quot;,&quot;id&quot;:&quot;ma&quot;,&quot;description&quot;:null,&quot;url&quot;:&quot;http://flybase.org/reports/ma.html&quot;}]}],
+  &quot;obo_xref&quot; : null,
+  &quot;obo_synonym&quot; : null,
+  &quot;is_preferred_root&quot; : false,
+  &quot;_links&quot; : {
+    &quot;self&quot; : {
+      &quot;href&quot; : &quot;https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144&quot;
+    },
+    &quot;graph&quot; : {
+      &quot;href&quot; : &quot;https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144/graph&quot;
+    }
+  }
+}
+</code></pre>
+<p>* Warning - due to legacy issues, the values of these tags are either a curie (CL:0000123) or short_form ID (CL_0000123) rather than an iri.  Handling code needs to deal with both of these formats.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../annotation_properties/" class="btn btn-neutral float-right" title="Annotation Properties">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+      
+        <span style="margin-left: 15px"><a href="../annotation_properties/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

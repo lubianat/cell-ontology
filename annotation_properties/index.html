@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Annotation Properties - CL Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Annotation Properties";
+    var mkdocs_page_input_path = "annotation_properties.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CL Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Keeping_ontology_terms_up_to_date/">Keeping ontology terms up to date</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Annotation Properties</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../presentations/">Presentations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../relations_guide/">A guide to what relations to use where in the Cell Ontology</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resolving_merge_conflicts/">Resolving merge conflicts</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CL Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Annotation Properties</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="annotation-properties">Annotation Properties<a class="headerlink" href="#annotation-properties" title="Permanent link">&para;</a></h1>
+<p><em>Note- this page is currently under development.</em></p>
+<p>The Cell Ontology has the following annotation properties:</p>
+<table>
+<thead>
+<tr>
+<th>Annotation property</th>
+<th>Description</th>
+<th>Example term</th>
+<th>Example annotation</th>
+<th>Must have?</th>
+<th>Only one use per term is allowed?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>consider</td>
+<td>To be used on obsoleted classes, to point to a term that should be considered by curators for use in place of the obsoleted term.  Multiple consider terms are allowed.  It can be useful to combine this with a comment to indicate when replacement would be appropriate.</td>
+<td>CL:0000610 <code>obsolete plant cell</code></td>
+<td>PO:0009002</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>created_by</td>
+<td>Added automatically on term creation with standard Protege settings. Ideally, this should use the "supplied user name" in the Protege User Details preference pane. This has been inconsistently applied in the past.</td>
+<td>CL:0002518</td>
+<td>tmeehan</td>
+<td>Should</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>creation_date</td>
+<td>Added automatically on term creation with standard Protege settings.</td>
+<td>CL:0002518</td>
+<td>2011-02-08T10:46:34Z</td>
+<td>Should</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>database_cross_reference</td>
+<td>Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).</td>
+<td>CL:0011005 <code>GABAergic interneuron</code></td>
+<td>PMID:29724907</td>
+<td>Should</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dc:contributor</td>
+<td>Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.</td>
+<td>N/A</td>
+<td>https://orcid.org/0000-0001-9990-8331</td>
+<td>Nice to have, if applicable</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dc:creator</td>
+<td>Coming Soon</td>
+<td>CL:0001201 <code>B cell, CD19-positive</code></td>
+<td>https://orcid.org/0000-0001-9990-8331</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>dc:date</td>
+<td>Coming soon</td>
+<td>CL:0001065 <code>innate lymphoid cell</code></td>
+<td>2017-01-30T20:20:48Z</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>dc:description</td>
+<td>Use this to annotate a whole ontology file with a brief description of the ontology.</td>
+<td>N/A</td>
+<td>An ontology of cell types.</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dc:title</td>
+<td>Use this to annotate an ontology, giving it a human readable title.</td>
+<td>N/A</td>
+<td>Cell Ontology</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>dcterms:license</td>
+<td>Use to attach a license to the whole ontology file.</td>
+<td>N/A</td>
+<td>http://creativecommons.org/licenses/by/4.0/</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>definition</td>
+<td>The textual definition for the ontology class.</td>
+<td>CL:0000946 <code>antibody secreting cell</code></td>
+<td>A lymphocyte of B lineage that is devoted to secreting large amounts of immunoglobulin.</td>
+<td>Must</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>'expand expression to'</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>foaf:depicted_by</td>
+<td>Use this to add a link to an image that depicts an example of an entity referred to by the term</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_alternative_id</td>
+<td>In CL this is a legacy property. Do not use.</td>
+<td>CL:0000059 <code>ameloblast</code></td>
+<td>CL:0000053</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_broad_synonym</td>
+<td>Used for synonyms where the primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.  You are encouraged to add a reference that uses the term in this way.</td>
+<td>CL:0000365 <code>animal zygote</code></td>
+<td>zygote</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_exact_synonym</td>
+<td>Used for synonyms where the definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name.  You are encouraged to add a reference that uses the term in this way.</td>
+<td>CL:0000622  <code>acinar cell</code></td>
+<td>acinic cell</td>
+<td>Nice to have, if applicable</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_narrow_synonym</td>
+<td>Used for synonyms where the definition of the synonym is the same as the primary definition, but has additional qualifiers. You are encouraged to add a reference that uses the term in this way.</td>
+<td>CL:0000362 <code>epidermal cell</code></td>
+<td>epithelial cell of skin</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_obo_namespace</td>
+<td>This is a legacy annotation property.  Do not add this manually.</td>
+<td>CL:0001061 <code>abnormal cell</code></td>
+<td>cell</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_related_synonym</td>
+<td>This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included.</td>
+<td>CL:0000902 <code>induced T-regulatory cell</code></td>
+<td>adaptive Treg</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>has_synonym_type</td>
+<td>The target of this relation must be an annotation property of type 'synonym_type_property'.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>IAO_0000116</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Automatically added by some pathways.  Do not add manually.  If duplicating a term (with the duplicate getting a new ID), it should be deleted.</td>
+<td>CL:2000074  <code>splenocyte</code></td>
+<td>CL:2000074</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>in_subset</td>
+<td>Used to add subset tags, used in conjunction with subset_property</td>
+<td>CL:0000039 <code>germ line cell</code></td>
+<td>_upper_level</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>is_inferred</td>
+<td>This annotation property is used in some automated pipelines.  Do not add manually</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>rdfs:comment</td>
+<td>Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions.</td>
+<td>CL:0007016 <code>adaxial cell</code></td>
+<td>In teleosts, adaxial cells give rise to slow muscle myoblasts.</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>rdfs:isDefinedBy</td>
+<td>Do not add manually.</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>rdfs:label</td>
+<td>Primary name - used as a display name by Protege (with standard settings) and most downstream consumers. Add only one of these.  It must be unique within an ontology.</td>
+<td>CL:0000418 <code>arcade cell</code></td>
+<td>arcade cell</td>
+<td>Must</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>RO_0002161</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td></td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>'see also'</td>
+<td>Used to link to a webpage, such as a GitHub ticket.</td>
+<td>CL:0000134 <code>mesenchymal stem cell</code></td>
+<td>https://github.com/obophenotype/cell-ontology/issues/474</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>shorthand</td>
+<td>Added automatically by some pipelines.  Do not add manually</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>subset_property</td>
+<td>A grouping class for subset tags.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>subset_property: added_for_HCA</td>
+<td>A subset tag for terms that were requested by the Human Cell Atlas.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>subset property: location_grouping</td>
+<td>A subset tag for cell types from a particular anatomical location.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>synonym_type_property</td>
+<td>A grouping class for synonym tags.</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>'term replaced by'</td>
+<td>To be used on obsolete terms to indicate a term that can be automatically substituted for the obsoleted term.</td>
+<td>Coming soon</td>
+<td>Coming soon</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../presentations/" class="btn btn-neutral float-right" title="Presentations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Keeping_ontology_terms_up_to_date/" class="btn btn-neutral" title="Keeping ontology terms up to date"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Keeping_ontology_terms_up_to_date/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../presentations/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
