@@ -10,11 +10,7 @@ Due to legacy issues, the values of these tags are either a CURIE (`"CL:0000123"
 
 ### Checking for deprecated terms
 
-The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for deprecated terms & find replacements.
-
-
-For example, the term <http://purl.obolibrary.org/obo/CL_0000375> ("obsolete osteoprogenitor cell") has been deprecated and has that tag **term_replaced_by**
-
+The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for deprecated terms & find replacements.For example, the term <http://purl.obolibrary.org/obo/CL_0000375> ("obsolete osteoprogenitor cell") has been deprecated and has that tag **term_replaced_by**
 It is possible to query the Ontology Lookup Service API for this by concatenating the base API URL for cl (https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/) with the URL for the class in CL:
 
 <https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000375>. 
